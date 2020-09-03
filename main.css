@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --font-title: 'Roboto Slab', serif;
+  --font-text: 'Roboto', sans-serif;
+  
+  --background: #F8F8F8;
+  --on-background: #555555;
+
+  --header: #fdd835;
+  --on-header: #000000;
+
+  --github-section: #24292e;
+  --on-github-section: #EEEEEE;
+  --link-on-github-section: #fdd835;
+  --accent-section: #E8E8E8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-text);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+}
+
+h1, h2, h3,
+p {
+  margin: 0;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
+}
+
+p + p {
+  margin-top: .5rem;
+}
+
+.header {
+  padding: 3rem 1rem;
+  background-color: var(--header);
+  color: var(--on-header);
+}
+
+.title.is-main-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+
+.title.is-main-title + .subtitle {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #000000AA;
+}
+
+.main > .section {
+  padding: 1rem;
+}
+
+.section.is-github-section {
+  background-color: var(--github-section);
+  color: var(--on-github-section);
+  padding: 2rem 1rem;
+}
+
+.section.is-github-section a {
+  color: var(--link-on-github-section);
+}
+
+.section.is-level-2-section {
+  margin-top: 2rem;
+}
+
+.section.is-level-1-section > .title,
+.section.is-level-1-section > .container > .title,
+.section.is-level-2-section > .title {
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.section.is-level-1-section > .title::before,
+.section.is-level-1-section > .container > .title::before,
+.section.is-level-2-section > .title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: var(--header);
+}
+
+.section.is-level-1-section > .title,
+.section.is-level-1-section > .container > .title {
+  font-size: 1.75rem;
+}
+
+.section.is-level-2-section > .title {
+  font-size: 1.5rem;
+  padding-left: 2.5rem;
+}
+
+.section.is-level-2-section > .title::before {
+  box-shadow: 1rem 0 0 var(--header);
+}
+
+.section.is-accent-section {
+  background-color: var(--accent-section);
+}
+
+@media screen and (min-width: 1200px) {
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  p + p {
+    margin-top: 1.5rem;
+  }
+  
+  .header {
+    padding: 5rem 0;
+  }
+  .title.is-main-title {
+    font-size: 4rem;
+  }
+
+  .title.title.is-main-title + .subtitle {
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .main > .section:not(.is-github-section) {
+    padding: 4rem 0;
+  }
+
+  .main .section:not(.is-github-section) p {
+    font-size: 1.25rem;
+  }
+
+  .section.section.is-github-section p {
+    font-size: 1.25rem;
+  }
+
+  .section.is-level-2-section {
+    margin-top: 4rem;
+  }
+
+  .section.is-level-1-section > .title,
+  .section.is-level-1-section > .container > .title,
+  .section.is-level-2-section > .title {
+    margin-bottom: 2rem;
+  }
+
+  .section.is-level-1-section > .title,
+  .section.is-level-1-section > .container > .title {
+    font-size: 2.25rem;
+  }
+
+  .section.is-level-2-section > .title {
+    font-size: 2rem;
+  }
+}
