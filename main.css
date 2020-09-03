@@ -10,10 +10,28 @@
   --header: #fdd835;
   --on-header: #000000;
 
+  --title: #000000;
+
   --github-section: #24292e;
   --on-github-section: #EEEEEE;
   --link-on-github-section: #fdd835;
   --accent-section: #E8E8E8;
+  --theme-switcher-section: #CCCCCC;
+
+  --light-theme: #FFFFFF;
+  --dark-theme: #232323;
+}
+
+body.has-dark-theme {
+  --background: #232323;
+  --on-background: #CCCCCC;
+
+  --title: #FFFFFF;
+
+  --theme-switcher-section: #00000044;
+  --accent-section: #00000077;
+
+  --dark-theme: #000000;
 }
 
 * {
@@ -39,6 +57,16 @@ h1, h2, h3,
 p {
   margin: 0;
   line-height: 1;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0;
 }
 
 p {
@@ -67,6 +95,30 @@ p + p {
   color: #000000AA;
 }
 
+.list.is-themes-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list.is-themes-list .item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.list.is-themes-list .item .theme {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.is-light-theme {
+  background-color: var(--light-theme);
+}
+
+.is-dark-theme {
+  background-color: var(--dark-theme);
+}
+
 .main > .section {
   padding: 1rem;
 }
@@ -75,6 +127,10 @@ p + p {
   background-color: var(--github-section);
   color: var(--on-github-section);
   padding: 2rem 1rem;
+}
+
+.section.is-theme-switcher-section {
+  background-color: var(--theme-switcher-section);
 }
 
 .section.is-github-section a {
@@ -93,6 +149,7 @@ p + p {
   margin-bottom: 1rem;
   position: relative;
   padding-left: 1.5rem;
+  color: var(--title);
 }
 
 .section.is-level-1-section > .title::before,
@@ -154,15 +211,19 @@ p + p {
     margin: auto;
   }
 
-  .main > .section:not(.is-github-section) {
+  .main > .section:not(.is-github-section):not(.is-theme-switcher-section) {
     padding: 4rem 0;
   }
 
-  .main .section:not(.is-github-section) p {
-    font-size: 1.25rem;
+  .main .is-theme-switcher-section {
+    padding: 2rem 0;
   }
 
-  .section.section.is-github-section p {
+  .list.is-themes-list .theme {
+    cursor: pointer;
+  }
+
+  .main .section p {
     font-size: 1.25rem;
   }
 
